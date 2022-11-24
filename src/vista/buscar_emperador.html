@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Emperadores Romanos </title>
+        <meta name="description" content="Listado de Emperadores Romanos">
+       
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <a class="sr" href="#main">Saltar al contenido principal</a>
+        <div class="containerFluid">
+            <header class="header">            
+                <div class="brand">
+                    <a href="/src/index.html"><img src="/src/assest/img/emperadoresromanos_logo.jpg" alt=""></a>
+                    <a href="/src/index.html"><h1><span>Emperadores</span><span>Romanos</span></h1></a>
+                </div>
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="presentacion.html">Presentación</a></li>
+                        <li><a href="enlace.html">Enlaces</a></li>
+                    </ul>
+                </nav>
+                
+            </header>
+        </div>
+
+
+    <div class="container" id="appVue" v-cloak>
+        
+   
+        <div class="row g-3">
+                
+                    <div class="col-sm-6">
+                        <input type="hidden" :value="lista_emperadores_select.id_emperador" name="id_emperador">
+                        <select class="form-select" :size="lista_emperadores.length" v-model="lista_emperadores_select">
+                            <option v-for="(lista_emperadores, key) in lista_emperadores" :key="key" :value="lista_emperadores">
+                                {{ lista_emperadores.nombre_emperador}} - {{lista_emperadores.nombre_romano}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <h2>{{ lista_emperadores_select.nombre_emperador}} - {{ lista_emperadores_select.nombre_romano}}</h2>
+                        <p><b>Fecha Inicio:</b>{{ lista_emperadores_select.fecha_inicio}}</p>
+                        <p><b>Fecha Fin:</b> {{ lista_emperadores_select.fecha_fin}}</p>
+                        <p><b>Nota:</b> {{ lista_emperadores_select.nota}}</p>
+                    </div>
+                </div>
+              
+            </div>
+     
+   
+    
+
+
+<footer>
+    <div class="containerFluid">
+        <div class="footer">
+            <ul>
+                <li><a href="">Sobre nosotros</a></li>    
+                <li><a href="">Aviso legal</a></li>
+                <li><a href="">Política de privacidad</a></li>
+            </ul>
+           
+        </div>
+        <p>&copy; 2022 Esther Giner Millán</p>
+       
+        <div class="goTop">
+            <a href="#main">&xwedge;</a>
+        </div>
+    </div>
+     
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+<!--<script type="module" src="/src/controlador/js/main.js"></script>-->
+<script>
+
+    var app = new Vue({
+        el: '#appVue',
+        data () {
+            return {
+                lista_emperadores: [{"id_emperador":"1","nombre_emperador":"Augusto","nombre_romano":"Gaius iulius Caesar","fecha_inicio":"16 de enero de 27 a. C.","fecha_fin":"17 de septiembre de 14" ,"nota":"Nacido como Gaius Octavius y adoptado por su tío abuelo Julio César. En el año 31 a. C. acabó con la Guerra civil y se hizo con el control de la República romana. Fue proclamado Augustus y Princeps por el Senado en el 27 a. C. Falleció de causas naturales a la edad de 76 años, tras 40 años de gobierno. Fue posteriormente deificado. "},{
+"id_emperador":"2","nombre_emperador":"Tiberio","nombre_romano":"Tiberius Iulius Caesar","fecha_inicio":"17 de septiembre de 14","fecha_fin":"16 de marzo de 37" ,"nota":"Yerno e hijo adoptivo de Augusto, nacido como Tiberius Claudius. Fue nombrado sucesor tras la muerte de Lucio y Cayo César. Su popularidad decayó durante sus últimos años, cuando dejó la política en manos de Sejano y se retiró a la isla de Capri. Falleció de causas naturales a la edad de 77 años, tras 23 años de gobierno. "}],
+lista_emperadores_select: {"id_emperador":"1","nombre_emperador":"Augusto","nombre_romano":"Gaius iulius Caesar","fecha_inicio":"16 de enero de 27 a. C.","fecha_fin":"17 de septiembre de 14" ,"nota":"Nacido como Gaius Octavius y adoptado por su tío abuelo Julio César. En el año 31 a. C. acabó con la Guerra civil y se hizo con el control de la República romana. Fue proclamado Augustus y Princeps por el Senado en el 27 a. C. Falleció de causas naturales a la edad de 76 años, tras 40 años de gobierno. Fue posteriormente deificado. "}
+}
+             
+           },
+      
+
+
+    })
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</html>

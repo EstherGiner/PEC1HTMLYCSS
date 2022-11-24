@@ -1,0 +1,687 @@
+/*Estilos para el sitio Emperadores Romanos */
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700i&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 400 16px/1.6 'Merriweather', serif;
+    background-color: rgb(245,246,240);
+    color: rgb(2,15,20);
+    overflow-x: hidden;
+    word-wrap: break-word;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
+h1, .h1  {
+    font-size: 2rem;
+}
+
+h2, .h2 {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    margin-bottom: 1.5rem;
+}
+
+h3, .h3 {
+    font-size: 1.35rem;
+    line-height: 1em;
+    margin-bottom: 1rem;
+}
+
+h4, .h4 {
+    font-size: 1.15rem;
+    line-height: 1em;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    h1, .h1 {
+        font-size: 2.5rem;
+    }    
+    h2, .h2 {
+        font-size: 2rem;
+    }    
+    h3, .h3 {
+        font-size: 1.5rem;
+    }
+    h4, .h4 {
+        font-size: 1.25rem;
+    }    
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+a {
+    color:rgba(255, 80, 50, 1);
+    text-decoration: none;
+}
+
+a:hover {
+    color:rgba(255, 80, 50, 0.5);
+}
+
+abbr {
+    text-decoration: none;
+}
+
+iframe {
+    border: 0;
+}
+
+figcaption {
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+/*Clases aplicadas a los elementos multimedia del sitio */
+.imgFluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.videoFluid {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.videoFluidItem {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.videoFluid::before {
+    display: block;
+    content: "";
+    padding-top: 56.25%;
+}
+
+/*Clases para alineamiento de textos*/
+.textCenter {
+    text-align: center;
+}
+.textRight{
+    text-align: right;
+}
+
+/*Clase para esconder un elemento que será únicamente visible a los lectores de pantalla*/
+.sr {
+    position:absolute;
+    height:1px;    
+    width:1px;    
+    overflow:hidden;    
+    clip:rect(1px, 1px, 1px, 1px);
+}
+
+/****************************
+Contenedores del sitio
+*****************************/
+main {
+    width: 100%;
+    padding: 50px 0;
+}
+
+header {
+    padding: 15px 0;
+}
+
+footer {
+    padding: 30px 0;
+}
+
+/*Contenido del header*/
+header {
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.login {
+    order: -1;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.brand h1 span:last-child {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.brand img {
+    margin-right: 15px;
+}
+
+.brand a {
+    color: rgb(2, 15, 20);
+}
+
+.login a {
+    display: inline-block;
+    background-color: rgb(255, 80, 50);
+    padding: 5px 15px;
+    color: rgb(255,255,255);
+    border-radius: 3px;
+    width: fit-content;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login a:hover {
+    color: rgb(2, 15, 20);
+}
+
+.brand, .navbar, .login {
+    margin-bottom: 15px;
+}
+
+@media (min-width: 992px) {
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .login {
+        order: 0;
+    }
+    .brand, .navbar, .login {
+        margin-bottom: 0;
+    }
+}
+
+/*Contenido del footer*/
+
+footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    position: relative;
+    text-align: center;
+    background-color: rgb(67, 58, 68);
+    color: rgb(255,255,255);
+}
+
+footer p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 30px 0;
+    margin: 0;
+}
+
+.goTop {
+    position: absolute;
+    right: 15px;
+    bottom: 0px;
+    font-size: 2rem;
+}
+
+footer a {
+    color: rgb(255,255,255);
+}
+
+footer a:hover {
+    color: rgb(255, 80, 50);
+}
+
+@media (min-width: 768px) {
+    footer {
+        text-align: left;
+    }
+    .footer {
+        display:flex;
+        justify-content: space-between;
+    }
+    .footer ul li {
+        display: inline-block;
+    }    
+    .footer ul li::after {
+        content: "•";
+        padding-right: 8px;
+        padding-left: 8px;
+    }    
+    .footer ul li:last-child::after {
+        content: "";
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+/*Las reglas que van a continuación consiguen que los contenidos dentro de .contaninerfluid o .container se adapten a los diversos dispositivos.*/
+.containerFluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+  
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+    .flexContainer {
+        display: flex;
+    }
+    .spaceBetween {
+        justify-content: space-between;
+    }
+}
+  
+@media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+}
+
+/****************************
+Menús de navegación del sitio
+*****************************/
+
+/*Menú principal*/
+nav.navbar {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+nav.navbar ul {
+    list-style-type: none;
+}
+
+nav.navbar li {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+nav.navbar a {
+    font-weight: 700;
+    color: rgba(2,15,20,1);
+}
+
+nav.navbar a:hover {
+    color: rgba(2,15,20,0.5);
+}
+
+nav.navbar a.active {
+    font-style: italic;
+    font-weight: 700;
+}
+
+@media (min-width: 992px) {
+    nav.navbar ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav.navbar ul li {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+/*Menú de páginas interiores*/
+
+.menu ul {
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 0.85rem;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 30px;
+}
+
+.menu a {
+    color: rgba(2,15,20,1);
+}
+
+.menu a:hover {
+    color: rgba(2,15,20,0.5);
+}
+
+
+/*Menú de migas de pan*/
+ul.breadcrumb {
+    margin-bottom: 2rem;
+    list-style: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul.breadcrumb li {
+    display: inline-block;
+}
+  
+ul.breadcrumb li + li {
+    padding-left: 7px;
+}
+
+ul.breadcrumb li + li::before {
+    padding-right: 7px;
+    content: "/";
+}
+
+ul.breadcrumb li a {
+    color: rgba(2, 15, 20, 1);
+}
+
+ul.breadcrumb li a:hover {
+    color: rgba(2, 15, 20, 0.5);
+}
+
+ul.breadcrumb li.active  {
+    color: rgba(2, 15, 20, 0.5);
+}
+
+@media (min-width: 1200px) {
+    ul.breadcrumb {
+        text-align: left;
+    }
+}
+
+
+/****************************
+Página de inicio
+*****************************/
+
+.home section+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+form {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+}
+
+form ul {
+	list-style-type: none;	
+}
+
+form ul li {
+	margin-bottom: 1rem;
+}
+
+input {
+    border: 1px solid #000;
+	padding: 15px;
+	font-size: 1.1rem;
+}
+
+input {
+	width: 99%;
+}
+
+input[type="checkbox"] {
+	width: auto;
+}
+
+input[type="checkbox"]+label {
+    display: inline;
+}
+
+input:focus {
+    background-color: rgba(255, 80, 50, 0.2);
+}
+
+input[type="submit"] {
+    display: inline-block;
+    width: auto;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px 30px;
+    background-color: rgba(255, 80, 50, 1);
+    color: rgb(255,255,255);
+    border: none;
+    text-transform: uppercase;
+   
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    color: rgba(2, 15, 20);
+}
+
+.infoLegal, label[for="politica"] {
+    font-size: 0.65rem;
+}
+
+.howTo {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.howTo p {
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .lemaHome {
+        width: 50%;
+    }
+    .form {
+        width: 40%;
+        padding-top: 15px;
+    }
+    .subTitle {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p.subTitle {
+        line-height: 1.9em;
+    }
+    .howTo {
+        width: 15%;
+    }
+}
+
+
+/****************************
+Página categoria.html
+*****************************/
+ul.clubs {
+    list-style-type: none;
+}
+
+ul.clubs li {
+    padding: 15px;
+}
+
+ul.clubs li img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul.clubs li p:first-of-type {
+    margin-top: 15px;
+}
+
+ul.clubs li p:first-of-type::before {
+    content: "";
+    display: inline-block;
+    width: 5%;
+    height: 4px;
+    background-color: rgb(2, 15, 20);
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    ul.clubs.gridContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 50%);
+    }
+
+}
+
+@media (min-width: 1200px) {
+    ul.clubs.gridContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 33.33333%);
+    }
+}
+
+/****************************
+Página detalle.html / 
+Pàgina detalle-emperadores.html
+*****************************/
+.content ul {
+    list-style-type: none;
+    padding-bottom: 30px;
+}
+
+.content ul li {
+    background-color: rgb(255,255,255);;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.content ul li p {
+    margin: 7px;
+}
+
+.content ul li img:hover {
+    opacity: 0.5;
+}
+
+.content h4::before {
+    content: "";
+    display: inline-block;
+    width: 5%;
+    height: 4px;
+    background-color: rgb(2, 15, 20);
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.bordered {
+    padding: 15px 0;
+}
+
+.data dt {
+    margin-top: 7px;
+    margin-bottom: 7px;
+    font-weight: 700;
+    border-bottom: 1px solid rgb(67,58,68);
+}
+
+.data dd {
+    margin-left: 15px;
+}
+
+.data ul {
+    list-style-type: none;
+}
+
+.data li>span {
+    font-weight: bold;
+}
+
+blockquote p {
+    text-align: center;
+    border-left: 5px solid rgba(67,58,68,1);
+    border-right: 5px solid rgba(67,58,68,1);
+    background-color: rgba(67,58,68,0.2);
+    padding: 15px;
+}
+
+.imgRounded {
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px;
+    shape-outside: circle();   
+}
+
+article h3, .data h3 {
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .content ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .content ul li {
+        width: 30%;
+    }
+    .intro p {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.9em;
+    }
+    .bordered {
+        border-top: 1px solid rgb(2, 15, 20);
+    }
+}
+
+@media (min-width: 1200px) {
+    .gridContainer2cols {
+        display: grid;
+        grid-template-columns: 25% auto;
+        column-gap: 15px;
+    }
+    .gridContainerDetalle {
+        display: grid;
+        grid-template-columns: 40% auto;
+        column-gap: 50px;
+    }
+    article {
+        text-align: justify;
+        hyphens: auto;
+    }
+}
+
+
